@@ -35,7 +35,13 @@ namespace DanceWebServiceDBAndTesting
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(
+            options => options.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+
             app.UseMvc();
-        }
+        }        
     }
 }
